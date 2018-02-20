@@ -33,6 +33,8 @@
     }
   </style>
   <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
 </head>
 <body>
   <div id="container">
@@ -45,9 +47,9 @@
         <ul>
           <li><label><input type="radio" name="fontname" value="arial"> Arial</label></li>
           <li><label><input type="radio" name="fontname" value="courier"> Courier</label></li>
-          <li><label><input type="radio" name="fontname" value="georgia"> Georgia</label></li>
-          <li><label><input type="radio" name="fontname" value="times" checked> Times New Roman</label></li>
-          <li><label><input type="radio" name="fontname" value="verdana"> Verdana</label></li>
+          <li><label><input type="radio" name="fontname" value="serif" checked> Serif</label></li>
+          <li><label><input type="radio" name="fontname" value="kavivanar"> Kavivanar</label></li>
+          <li><label><input type="radio" name="fontname" value="bellefair"> Bellefair</label></li>
         </ul>
       </div>
       <div class="control">
@@ -71,10 +73,22 @@
 
   </div>
 <script>
+
+  $('#bgcolor').change(function(e) {
+    console.log(e.target.value);
+    $('#canvas').css('background-color', e.target.value);
+  })
+
+  $('#textcolor').change(function(e) {
+    console.log(e.target.value);
+    $('#canvas').css('color', e.target.value);
+  })
+
   $('input[type=radio][name=fontname]').change(function(e) {
     console.log(e.target.value);
     $('#canvas').css('font-family', e.target.value);
   })
+
   $(document).ready(function() {
 
   });
