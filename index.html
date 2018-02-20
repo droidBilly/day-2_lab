@@ -73,19 +73,27 @@
 
   </div>
 <script>
+  $('#textpadding').bind('input', function(e) {
+    $('#canvas').css('padding', e.target.value + "px");
+  })
 
-  $('#bgcolor').change(function(e) {
-    console.log(e.target.value);
+  $('#textsize').bind('input', function(e) {
+    $('#canvas').css('font-size', e.target.value + "px");
+  })
+
+  $('#lineheight').bind('input', function(e) {
+    $('#canvas').css('line-height', e.target.value + "px");
+  })
+
+  $('#bgcolor').bind('input', function(e) {
     $('#canvas').css('background-color', e.target.value);
   })
 
-  $('#textcolor').change(function(e) {
-    console.log(e.target.value);
+  $('#textcolor').bind('input', function(e) {
     $('#canvas').css('color', e.target.value);
   })
 
   $('input[type=radio][name=fontname]').change(function(e) {
-    console.log(e.target.value);
     $('#canvas').css('font-family', e.target.value);
   })
 
